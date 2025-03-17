@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './styles/Product.css'
 
 function Product(props){
   const [quantity, setQuantity] = useState(0);
@@ -17,7 +18,9 @@ function Product(props){
   }
 
   const decrease = () => {
-    setQuantity(quantity-1);
+    if(quantity>0){
+      setQuantity(quantity-1);
+    }
   }
 
   return(

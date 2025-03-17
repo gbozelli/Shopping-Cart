@@ -3,16 +3,18 @@ import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import Product from "./components/Product.jsx"
 
 const products = []
-for(let i = 0; i < 20; i++){
+for(let i = 1; i < 21; i++){
   products.push(i);
 } 
 
 async function getData(id) {
   const response = await fetch(
-    `'https://fakestoreapi.com/products/${id}`)
+    `https://fakestoreapi.com/products/${id}`)
   const data = await response.json();
+  console.log(data);
   return data;
 }
 
@@ -31,6 +33,13 @@ function App() {
 
     fetchData();
   }, []);
+  
+  const formatPrice = (value) => {
+    return value.toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+  };
 
   return(
     <>
@@ -38,7 +47,7 @@ function App() {
       <Outlet />
       <div className='cards'>
           {product.map((p) => (
-            <Card key={p.name} name={p.name} img={p.img}/>
+            <Product key={p.id} name={p.title} img={p.image} price={formatPrice(p.price)}/>
           ))}
         </div>
     </>

@@ -1,0 +1,69 @@
+.Product {
+  border: 1px solid #ff6347;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  /* Largura fixa para o card */
+  text-align: center;
+  margin: 10px;
+}
+
+img {
+  width: 100%;
+  /* Largura da imagem igual à largura do card */
+  height: 200px;
+  /* Altura fixa para a imagem */
+  object-fit: cover;
+  /* Garante que a imagem cubra o espaço sem distorcer */
+  border-radius: 8px;
+}
+
+.infos {
+  margin-top: 10px;
+}
+
+#name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#price {
+  color: #ff6347;
+  font-size: 1.1rem;
+}
+
+#add {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+#add:hover {
+  background-color: #0056b3;
+}
+
+.set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.set button {
+  background-color: #ff6347;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.set button:hover {
+  background-color: #ff6347;
+}
