@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
-import Product from "./components/Product.jsx"
+import Product from "./components/Product.jsx";
+import './components/styles/App.css';
 
 const products = []
 for(let i = 1; i < 21; i++){
@@ -33,23 +34,21 @@ function App() {
 
     fetchData();
   }, []);
-  
-  const formatPrice = (value) => {
-    return value.toLocaleString("en-US", {
-      style: "currency",
-      currency: "USD",
-    });
-  };
 
   return(
     <>
-      <NavBar/>
-      <Outlet />
-      <div className='cards'>
-          {product.map((p) => (
-            <Product key={p.id} name={p.title} img={p.image} price={formatPrice(p.price)}/>
-          ))}
+    {isLoading ? (
+        <div className='loading'>
+          <div className='spinner'></div>
+          <p> </p>
         </div>
+      ):(
+      <>
+        <NavBar/>
+        <Outlet context={product}/> 
+      </>
+      )}
+      
     </>
   )
 
