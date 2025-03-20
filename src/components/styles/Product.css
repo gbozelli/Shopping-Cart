@@ -6,6 +6,11 @@
   /* Largura fixa para o card */
   text-align: center;
   margin: 10px;
+  min-height: 380px;
+  max-height: 380px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 img {
@@ -20,10 +25,13 @@ img {
 
 .infos {
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #name {
-  font-size: 1.2rem;
+  font-size: 16px;
   font-weight: bold;
 }
 

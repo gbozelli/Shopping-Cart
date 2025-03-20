@@ -1,5 +1,28 @@
-.cards{
-  display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(5, 20%);
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Ocupa toda a altura da tela */
+  padding-top: 600px;
+  /* Compensa a altura da barra de navegação */
 }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* Grade responsiva */
+  gap: 20px;
+  /* Espaçamento entre os itens */
+  justify-items: center;
+  /* Centraliza os itens horizontalmente */
+  align-items: center;
+  /* Centraliza os itens verticalmente */
+  width: 100%;
+  /* Ocupa toda a largura disponível */
+  max-width: 1200px;
+  /* Limita a largura máxima */
+  padding: 20px;
+  /* Adiciona um espaçamento interno */
+}
+
