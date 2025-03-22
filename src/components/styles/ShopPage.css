@@ -8,7 +8,7 @@
   margin: 10px;
   min-height: 380px;
   max-height: 380px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -21,13 +21,6 @@ img {
   object-fit: cover;
   /* Garante que a imagem cubra o espaço sem distorcer */
   border-radius: 8px;
-}
-
-.infos {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 #name {
@@ -74,10 +67,4 @@ img {
 
 .set button:hover {
   background-color: #ff6347;
-}
-
-.quantity-controls{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }

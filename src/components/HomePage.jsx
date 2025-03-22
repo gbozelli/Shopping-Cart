@@ -5,7 +5,7 @@ import './styles/HomePage.css'
 
 function HomePage(){
 
-  const product = useOutletContext();
+  const {product, updateProduct} = useOutletContext();
 
   const formatPrice = (value) => {
     return value.toLocaleString("en-US", {
@@ -18,7 +18,7 @@ function HomePage(){
   <div className="root">
     <div className='cards'>
           {product.map((p) => (
-            <Product key={p.id} name={p.title} img={p.image} price={formatPrice(p.price)}/>
+            <Product key={p.id} id={p.id} name={p.title} img={p.image} price={formatPrice(p.price)} updateProduct={updateProduct} sells={p.sells || 0}/>
           ))}
     </div>
   </div>
